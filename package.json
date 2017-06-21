@@ -1,10 +1,10 @@
 {
-  "name": "google-maps-test",
-  "version": "1.0.0",
-  "description": "",
-  "main": "Gruntfile.js",
-  "scripts": {
-		"start": "node serverStart.js",
+	"name": "google-maps-test",
+	"version": "1.0.0",
+	"description": "",
+	"main": "Gruntfile.js",
+	"scripts": {
+		"start": "grunt serve",
 		"prepare-win": "npm install -g bower grunt",
 		"prepare-mac": "sudo npm install -g bower grunt",
 		"serve-win": "npm install & bower install & grunt serve",
@@ -20,6 +20,6 @@
 		"load-grunt-tasks": "^3.5.2",
 		"serve": "^1.4.0"
 	},
-  "author": "Pablo Bassil",
-  "license": "ISC"
+	"author": "Pablo Bassil",
+	"license": "ISC"
 }
