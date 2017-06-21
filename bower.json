@@ -1,0 +1,17 @@
+{
+  "name": "google-maps-test",
+  "description": "",
+  "main": "Gruntfile.js",
+  "authors": [
+    "Pablo Bassil"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
