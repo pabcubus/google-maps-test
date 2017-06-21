@@ -1,0 +1,14 @@
+<div>
+	<div ng-controller="FileChooserController as fc">
+		<input id="fileChooser{{fc.id}}" type="file" ng-show="false" accept=".csv">
+		<md-button id="fileChooserButton{{fc.id}}" class="md-fab md-mini md-primary" aria-label="Eat cake">
+			<md-icon aria-label="add_box" class="material-icons step">
+				add_box
+			</md-icon>
+		</md-button>
+		<md-input-container>
+			<label>Title</label>
+			<input id="fileChooserInput{{fc.id}}" type="text" ng-model="fc.fileName" ng-disabled="true">
+		</md-input-container>
+	</div>
+</div>

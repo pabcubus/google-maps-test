@@ -1,1 +1,1 @@
-var app = angular.module('google-maps-test', ['ngLodash', 'ngMaterial']);
+var app = angular.module('googleMapsTest', ['ngMaterial', 'ngLodash', 'ui.router']);

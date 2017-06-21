@@ -7,41 +7,38 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<!--
-	<link rel="icon" type="image/png" href="app/images/favicon.png">
-
-	<link href="app/libs/material-design-icons/material-icons.css" rel="stylesheet">
-	<link href="bower_components/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css" />
-
-	<link rel="stylesheet" href="bower_components/angularjs-datepicker/dist/angular-datepicker.min.css">
-
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bower_components/eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker.min.css">
-
-	<link rel="stylesheet" href="node_modules/c3/c3.min.css">
-	-->
-
 	<link href="app/libs/material-design-icons/material-icons.css" rel="stylesheet">
 
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-  <script src="bower_components/angular/angular.min.js"></script>
-  <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-  <script src="bower_components/angular-aria/angular-aria.min.js"></script>
-  <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+	<script src="bower_components/angular/angular.min.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 	<script src="bower_components/angular-material/angular-material.min.js"></script>
 
-	<link href="app/styles/shared.min.css" rel="stylesheet">
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+	<script src="bower_components/ng-lodash/build/ng-lodash.min.js"></script>
+
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
 
 	<script src="app/setup/init.js"></script>
 	<script src="app/setup/routes.js"></script>
 
+	<!-- Directives -->
+	<script src="app/directives/fileChooser/js/fileChooser.js"></script>
+	<script src="app/directives/fileChooser/js/FileChooserController.js"></script>
+
+	<!-- Controllers -->
 	<script src="app/AppController.js"></script>
+	<script src="app/screens/map/js/MapController.js"></script>
+
+	<link href="app/styles/shared.min.css" rel="stylesheet">
 </head>
 
-<body
-	class="main-content"
-	ng-controller="AppController as ac"
-	ng-cloak>
+<body ng-app="googleMapsTest" ng-controller="AppController as ac" ng-cloak>
+
+	<div ng-include="'app/app_frame.html'"></div>
 </body>
 
 </html>
