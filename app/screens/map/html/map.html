@@ -1,4 +1,11 @@
-<div ng-controller="MapController as mc">
-	<file-chooser when-read-completes="mc.readFile">
-	</file-chooser>
+<div ng-controller="MapController as mc" class="map-container" layout="column" layout-fill>
+	<div flex="nogrow">
+		<file-chooser when-read-completes="mc.readFile">
+		</file-chooser>
+	</div>
+	<div flex="grow" layout="row" layout-xs="column">
+		<div id="map" flex="grow">
+
+		</div>
+	</div>
 </div>

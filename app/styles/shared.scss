@@ -1,0 +1,17 @@
+.map-container{
+	.map-wrapper{
+		#map{
+			height: auto;
+		}
+	}
+}
+
+@media (min-width: 600px) {
+	.map-container{
+		.map-wrapper{
+			#map{
+				height: 300px;
+			}
+		}
+	}
+}

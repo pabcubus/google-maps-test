@@ -9,12 +9,16 @@
 
 	<link href="app/libs/material-design-icons/material-icons.css" rel="stylesheet">
 
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDynangdOxvjHfzaqYA4xYbAXJH-zUqjg8"></script>
+
 	<link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
 	<script src="bower_components/angular/angular.min.js"></script>
 	<script src="bower_components/angular-animate/angular-animate.min.js"></script>
 	<script src="bower_components/angular-aria/angular-aria.min.js"></script>
 	<script src="bower_components/angular-messages/angular-messages.min.js"></script>
 	<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+	<script src="bower_components/angular-cache/dist/angular-cache.min.js"></script>
 
 	<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 
@@ -24,6 +28,11 @@
 
 	<script src="app/setup/init.js"></script>
 	<script src="app/setup/routes.js"></script>
+	<script src="app/setup/cacheProvider.js"></script>
+
+	<!-- Services -->
+	<script src="app/services/DataController.js"></script>
+	<script src="app/services/GoogleMapsController.js"></script>
 
 	<!-- Directives -->
 	<script src="app/directives/fileChooser/js/fileChooser.js"></script>
@@ -38,7 +47,7 @@
 
 <body ng-app="googleMapsTest" ng-controller="AppController as ac" ng-cloak>
 
-	<div ng-include="'app/app_frame.html'"></div>
+	<div layout="column" flex="grow" layout-fill ng-include="'app/app_frame.html'"></div>
 </body>
 
 </html>

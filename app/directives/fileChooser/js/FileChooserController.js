@@ -27,8 +27,10 @@ app.controller('FileChooserController', function($scope, $timeout, $mdSidenav) {
 				r.onload = function(e) {
 					if (vm.fileType == 'text/csv') {
 						var contents = e.target.result;
-						vm.fileContent = contents;
-						$scope.whenReadCompletes(contents);
+
+						var lines = contents.split(/[\r\n]+/g);
+
+						$scope.whenReadCompletes(lines);
 					}
 				};
 
