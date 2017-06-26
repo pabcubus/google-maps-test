@@ -1,5 +1,9 @@
-'use strict'
-app.service('GoogleMapsController', function($q, lodash, DataController) {
+/**
+ * @class GMapsTest.gmt-service.GoogleMapsService
+ * @description This handles all according to the Google Maps API
+ */
+gmtSers.service('GoogleMapsService', function($q, lodash, DataService) {
+	'use strict'
 
 	var vm = this;
 
@@ -25,6 +29,15 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		}
 	};
 
+	/**
+	 * @function
+	 * @name createMap
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {string}	divId	The div in which the map is going to be displayed
+	 * @param {integer}	zoom	Zoom number according to Google Maps API
+	 * @returns {object} The new map
+	 * @description This function creates a new map to be displaye on the page
+	 */
 	function createMap(divId, zoom) {
 		var map = new google.maps.Map(document.getElementById(divId), {
 			center: {
@@ -45,6 +58,18 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		return map;
 	}
 
+	/**
+	 * @function
+	 * @name setSite
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {object}	map			The map object previously created
+	 * @param {integer}	lat			Latitude
+	 * @param {integer}	lng			Longitude
+	 * @param {string}	string		String that puts a title
+	 * @param {integer}	markerId	Marker ID
+	 * @returns {object} The new marker
+	 * @description This function creates a new map to be displaye on the page
+	 */
 	function setSite(map, lat, lng, string, markerId) {
 		if (map && lat && lng) {
 			var marker = new google.maps.Marker({
@@ -77,6 +102,14 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		}
 	}
 
+	/**
+	 * @function
+	 * @name centerMap
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {object}	map			The map object previously created
+	 * @param {array}	markers		Array of previously created markers
+	 * @description This functions center the map taking the markers positions
+	 */
 	function centerMap(map, markers) {
 		var bounds = new google.maps.LatLngBounds();
 		//  Go through each...
@@ -87,6 +120,14 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		map.fitBounds(bounds);
 	}
 
+	/**
+	 * @function
+	 * @name addUnicornPath
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {object}	map			The map object previously created
+	 * @param {object}	marker		The marker that has the initial position of the unicorn
+	 * @description This function displays an image from this marker to the closest marker
+	 */
 	function addUnicornPath(map, marker) {
 		var promises = [];
 
@@ -134,6 +175,14 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		animateCircle(vm.unicornPath);
 	}
 
+	/**
+	 * @function
+	 * @name addSelectedMarker
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {object}	map			The map object previously created
+	 * @param {object}	marker		The marker that has the initial position of the unicorn
+	 * @description This functions selects a marker, and when 2 markers are selected it will trigger a path between them
+	 */
 	function addSelectedMarker(map, marker) {
 		if (vm.selectedMarkers.length >= 2) {
 			vm.selectedMarkersPoints = [];
@@ -168,6 +217,13 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		}
 	}
 
+	/**
+	 * @function
+	 * @name animateCircle
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {object}	line	The object with the Polyline
+	 * @description This function animates the unicorn between 2 points
+	 */
 	function animateCircle(line) {
 		var count = 0;
 		window.setInterval(function() {
@@ -179,6 +235,17 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		}, 20);
 	}
 
+	/**
+	 * @function
+	 * @name getDistanceFromLatLonInKm
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {integer}	lat1	Latitude from the first point
+	 * @param {integer}	lon1	Longitude from the first point
+	 * @param {integer}	lat2	Latitude from the second point
+	 * @param {integer}	lon2	Longitude from the second point
+	 * @returns {integer} 		The distance between 2 points
+	 * @description This function calculates the distance between 2 points
+	 */
 	function getDistanceFromLatLonInKm(lat1, lon1, lat2, lon2) {
 		var R = 6371; // Radius of the earth in km
 		var dLat = deg2rad(lat2 - lat1); // deg2rad below
@@ -192,6 +259,14 @@ app.service('GoogleMapsController', function($q, lodash, DataController) {
 		return d;
 	}
 
+	/**
+	 * @function
+	 * @name deg2rad
+	 * @memberOf GMapsTest.gmt-service.GoogleMapsService
+	 * @param {integer}	deg	The latitude in degrees
+	 * @returns {integer} 	Radians
+	 * @description Converts degrees to radians
+	 */
 	function deg2rad(deg) {
 		return deg * (Math.PI / 180)
 	}

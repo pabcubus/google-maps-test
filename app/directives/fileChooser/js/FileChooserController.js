@@ -1,4 +1,8 @@
-app.controller('FileChooserController', function($scope, $timeout, $mdSidenav) {
+/**
+ * @class GMapsTest.gmt-controllers.FileChooserController
+ * @description This controller is the one that interacts with the File Chooser directive
+ */
+gmtCons.controller('FileChooserController', function($scope, $timeout, $mdSidenav) {
 	'use strict'
 
 	var vm = this;
@@ -12,6 +16,12 @@ app.controller('FileChooserController', function($scope, $timeout, $mdSidenav) {
 
 	init();
 
+	/**
+	 * @function
+	 * @name init
+	 * @memberOf GMapsTest.gmt-controllers.FileChooserController
+	 * @description This function inits the File Chooser component
+	 */
 	function init() {
 		$timeout(function() {
 			var input = $('#fileChooser' + vm.id);

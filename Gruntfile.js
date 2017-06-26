@@ -4,6 +4,14 @@ module.exports = function(grunt) {
 	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
+		jsdoc: {
+			dist: {
+				src: ['app/**/*.js'],
+				options: {
+					destination: 'jsdocs'
+				}
+			}
+		},
 		sass: {
 			options: {
 				sourceMap: false
@@ -49,16 +57,23 @@ module.exports = function(grunt) {
 		}
 	});
 
+	grunt.loadNpmTasks('grunt-jsdoc');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
+	grunt.registerTask('generate_docs', [
+		'jsdoc'
+	]);
+
 	grunt.registerTask('serve', [
+		'jsdoc',
 		'sass',
 		'cssmin',
 		'concurrent:serve'
 	]);
 
 	grunt.registerTask('serve_prod', [
+		'jsdoc',
 		'sass',
 		'cssmin',
 		'concurrent:serve_prod'

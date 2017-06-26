@@ -1,4 +1,4 @@
-app.config(
+gmtApp.config(
 	function($urlRouterProvider, $stateProvider) {
 		$urlRouterProvider.otherwise('/map');
 		$stateProvider

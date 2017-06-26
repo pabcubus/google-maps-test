@@ -15,8 +15,10 @@
 		"grunt-concurrent": "^2.3.1",
 		"grunt-contrib-cssmin": "^2.0.0",
 		"grunt-contrib-watch": "^1.0.0",
+		"grunt-jsdoc": "^2.1.0",
 		"grunt-sass": "^1.2.1",
 		"grunt-shell": "^2.0.0",
+		"jsdoc": "^3.4.3",
 		"load-grunt-tasks": "^3.5.2",
 		"serve": "^1.4.0"
 	},
