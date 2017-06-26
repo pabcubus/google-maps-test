@@ -18,13 +18,12 @@ Then we need to install the project dependencies for the project and also run th
 $ npm run serve-mac (or serve-win)
 ```
 
-After running the previous steps, to run the project simply do `grunt serve` from the Terminal or CMD, and then on your browser go to `http://localhost:3000/`.
+After running the previous steps, you can also run the project (with dependencies installed previously) `grunt serve` from the Terminal or CMD, and then on your browser go to `http://localhost:3000/`.
 
 This project uses:
-- RequireJS
-- AngularJS
-- Bootstrap
-- Lodash
+- [AngularJS](https://lodash.com/)
+- [Material Angular for the UI](https://material.angularjs.org/latest/)
+- [Lodash](https://lodash.com/)
 
 and requires:
 - Node Package Manager (NPM)
