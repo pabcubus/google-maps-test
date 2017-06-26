@@ -10,10 +10,11 @@ To do this, run these commands from your Terminal or CMD:
 $ cd /local/folder/to/your/project
 ```
 Then we need to install the global dependencies for the project
-```
+```sh
 $ npm run prepare-mac (or prepare-win)
 ```
 Then we need to install the project dependencies for the project and also run the project
+```sh
 $ npm run serve-mac (or serve-win)
 ```
 
